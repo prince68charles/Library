@@ -5,7 +5,7 @@ const bookLibrary = [];
 
 
 
-function book () {
+function book (name, author, title, pages) {
 
 
 
@@ -18,7 +18,7 @@ function book () {
 
 
 
-function addBookToLibrary () {
+function addBookToLibrary (name, author, title, pages) {
 
 
 
