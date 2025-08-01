@@ -1,15 +1,19 @@
+const newBook = []
+
 const bookLibrary = [];
 
 
 
+const displayBooks = document.getElementById("display")
+
+const createNewBook = document.getElementById("new-book")
 
 
 
-function book (name, author, title, pages) {
+function book () {
 
 
-
-
+   
 
 
 }
@@ -18,7 +22,7 @@ function book (name, author, title, pages) {
 
 
 
-function addBookToLibrary (name, author, title, pages) {
+function addBookToLibrary (title, author, pages) {
 
 
 
