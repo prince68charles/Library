@@ -1,30 +1,61 @@
-const newBook = []
-
 const bookLibrary = [];
-
 
 
 const displayBooks = document.getElementById("display")
 
 const createNewBook = document.getElementById("new-book")
 
+const bookForm = document.getElementById("my-form")
+
+const bookDisplay = document.querySelector(".book-selector")
 
 
-function book () {
 
+bookForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const newBook = []
+
+    const newTitle = document.getElementById("title").value;
+
+    const newAuthor = document.getElementById("author").value;
+
+    const newPages = document.getElementById("pages").value;
+
+
+    newBook.push(newTitle)
+    newBook.push(newAuthor)
+    newBook.push(newPages)
+
+
+    addBookToLibrary(newBook)
+
+})
+
+
+
+
+function addBookToLibrary (bookArr) {
+
+
+    bookLibrary.push(bookArr)
 
    
+
 
 
 }
 
 
+function displayLibrary (bookLibrary) {
 
 
+    let display = document.createElement("div")
 
-function addBookToLibrary (title, author, pages) {
+    display.innerText = bookLibrary
 
-
+    bookDisplay.appendChild(display)
 
 
 
