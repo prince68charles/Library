@@ -7,7 +7,7 @@ const createNewBook = document.getElementById("new-book")
 
 const bookForm = document.getElementById("my-form")
 
-const bookDisplay = document.querySelector(".book-selector")
+const bookDisplay = document.querySelector(".book-display")
 
 
 
@@ -17,12 +17,13 @@ bookForm.addEventListener("submit", function(e) {
 
     const newBook = []
 
-    const newTitle = document.getElementById("title").value;
+    const newTitle = document.getElementById("title")
 
-    const newAuthor = document.getElementById("author").value;
+    const newAuthor = document.getElementById("author")
 
-    const newPages = document.getElementById("pages").value;
+    const newPages = document.getElementById("pages")
 
+   
 
     newBook.push(newTitle)
     newBook.push(newAuthor)
@@ -30,6 +31,8 @@ bookForm.addEventListener("submit", function(e) {
 
 
     addBookToLibrary(newBook)
+
+    bookForm.reset();
 
 })
 
@@ -51,13 +54,34 @@ function addBookToLibrary (bookArr) {
 function displayLibrary (bookLibrary) {
 
 
-    let display = document.createElement("div")
+    for (i=0; i < bookLibrary.length; i++) {
 
-    display.innerText = bookLibrary
+        const book = bookLibrary[i]
 
-    bookDisplay.appendChild(display)
+        const index = i
 
+        let bookDiv = document.createElement("div")
+
+        bookDiv.innerText = `Book ${index + 1}
+
+        Title: ${book[0]}
+        Author: ${book[1]}
+        Pages: ${book[2]}`;
+
+        bookDisplay.appendChild(bookDiv);
+
+
+    }
 
 
 
 }
+
+
+
+displayBooks.addEventListener("click", () => {
+
+
+    displayLibrary(bookLibrary)
+
+})
